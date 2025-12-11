@@ -53,6 +53,18 @@
         <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920')"></div>
         <div class="hero-overlay"></div>
         
+        <!-- Animated Background Particles -->
+        <div class="hero-particles">
+            <div class="particle particle-1"></div>
+            <div class="particle particle-2"></div>
+            <div class="particle particle-3"></div>
+            <div class="particle particle-4"></div>
+            <div class="particle particle-5"></div>
+            <div class="particle particle-6"></div>
+            <div class="particle particle-7"></div>
+            <div class="particle particle-8"></div>
+        </div>
+        
         <!-- Floating Literary Elements -->
         <div class="floating-elements">
             <div class="float-item quill"><i class="fas fa-feather-alt"></i></div>
@@ -93,21 +105,13 @@
                 <span class="cta-icon"><i class="fas fa-angle-double-down"></i></span>
             </a>
         </div>
-
-        <!-- Scroll Indicator -->
-        <div class="scroll-indicator animate-fade delay-5">
+        
+        <!-- Scroll Down Indicator -->
+        <a href="#about" class="scroll-indicator">
             <div class="scroll-mouse">
                 <div class="scroll-wheel"></div>
             </div>
-            <span class="scroll-text">Scroll to Explore</span>
-        </div>
-
-        <!-- Section Transition -->
-        <div class="section-wave">
-            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
-                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,90 1440,60 L1440,120 L0,120 Z"></path>
-            </svg>
-        </div>
+        </a>
     </section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
@@ -746,6 +750,8 @@
                     modalBody.innerHTML = data.content;
                     modal.classList.add('active');
                     document.body.style.overflow = 'hidden';
+                    // Hide magic cursor when modal is open
+                    document.body.classList.remove('has-magic-cursor');
                 }
             });
         });
@@ -760,6 +766,10 @@
         function closeModal() {
             modal.classList.remove('active');
             document.body.style.overflow = '';
+            // Restore magic cursor when modal is closed
+            if (!('ontouchstart' in window)) {
+                document.body.classList.add('has-magic-cursor');
+            }
         }
     </script>
 </body>

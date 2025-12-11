@@ -13,6 +13,7 @@ document.addEventListener('DOMContentLoaded', () => {
     initParallax();
     initScrollTriggeredRoadmap();
     initSidebarHighlight();
+    initSectionAnimations();
 });
 
 /* ==================== MAGIC CURSOR ==================== */
@@ -233,7 +234,7 @@ function initSmoothScroll() {
             const targetElement = document.querySelector(targetId);
             
             if (targetElement) {
-                const headerOffset = 80;
+                const headerOffset = 0;
                 const elementPosition = targetElement.getBoundingClientRect().top;
                 const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
                 
@@ -267,17 +268,59 @@ function initBackToTop() {
     });
 }
 
+/* ==================== SECTION SCROLL ANIMATIONS ==================== */
+function initSectionAnimations() {
+    const sections = document.querySelectorAll('section');
+    const footer = document.querySelector('.main-footer');
+    const journeyCards = document.querySelectorAll('.journey-card');
+    
+    const sectionObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('section-visible');
+            }
+        });
+    }, {
+        threshold: 0.1,
+        rootMargin: '-50px 0px'
+    });
+    
+    sections.forEach(section => {
+        sectionObserver.observe(section);
+    });
+    
+    // Also observe footer
+    if (footer) {
+        sectionObserver.observe(footer);
+    }
+    
+    // Journey cards individual animation
+    const cardObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
+    }, {
+        threshold: 0.2,
+        rootMargin: '0px'
+    });
+    
+    journeyCards.forEach(card => {
+        cardObserver.observe(card);
+    });
+}
+
 /* ==================== PARALLAX EFFECTS ==================== */
 function initParallax() {
     const heroContent = document.querySelector('.hero-content');
     const floatingElements = document.querySelectorAll('.float-item');
     const heroBg = document.querySelector('.hero-bg');
-    const aboutBg = document.querySelector('.about-bg');
-    const journeyBg = document.querySelector('.journey-bg');
+    const aboutSection = document.querySelector('.about-section-dynamic');
+    const journeySection = document.querySelector('.journey-section');
     
     // Throttle scroll events for performance
     let ticking = false;
-    
     window.addEventListener('scroll', () => {
         if (!ticking) {
             window.requestAnimationFrame(() => {

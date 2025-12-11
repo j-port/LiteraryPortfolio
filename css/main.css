@@ -174,6 +174,7 @@ body.has-magic-cursor select {
     justify-content: space-between;
     align-items: center;
     transition: var(--transition-medium);
+    background: transparent;
 }
 
 .main-nav.scrolled {
@@ -362,7 +363,9 @@ body.has-magic-cursor select {
     justify-content: center;
     overflow: hidden;
     padding-top: 80px;
+    padding-bottom: 0;
     box-sizing: border-box;
+    background: var(--color-bg-dark);
 }
 
 .hero-bg {
@@ -384,10 +387,109 @@ body.has-magic-cursor select {
     height: 100%;
     background: linear-gradient(
         180deg,
-        rgba(10, 10, 15, 0.7) 0%,
-        rgba(10, 10, 15, 0.8) 50%,
-        rgba(10, 10, 15, 0.95) 100%
+        rgba(10, 10, 15, 0.5) 0%,
+        rgba(10, 10, 15, 0.6) 40%,
+        rgba(10, 10, 15, 0.85) 70%,
+        var(--color-bg-dark) 100%
     );
+}
+
+/* Animated Background Particles */
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.particle {
+    position: absolute;
+    background: var(--color-gold);
+    border-radius: 50%;
+    opacity: 0;
+    animation: particleFloat 15s ease-in-out infinite;
+}
+
+.particle-1 {
+    width: 4px;
+    height: 4px;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.particle-2 {
+    width: 6px;
+    height: 6px;
+    left: 25%;
+    animation-delay: 2s;
+}
+
+.particle-3 {
+    width: 3px;
+    height: 3px;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.particle-4 {
+    width: 5px;
+    height: 5px;
+    left: 55%;
+    animation-delay: 6s;
+}
+
+.particle-5 {
+    width: 4px;
+    height: 4px;
+    left: 70%;
+    animation-delay: 8s;
+}
+
+.particle-6 {
+    width: 6px;
+    height: 6px;
+    left: 85%;
+    animation-delay: 10s;
+}
+
+.particle-7 {
+    width: 3px;
+    height: 3px;
+    left: 15%;
+    animation-delay: 3s;
+}
+
+.particle-8 {
+    width: 5px;
+    height: 5px;
+    left: 92%;
+    animation-delay: 7s;
+}
+
+@keyframes particleFloat {
+    0% {
+        bottom: -10%;
+        opacity: 0;
+        transform: translateX(0) scale(0);
+    }
+    10% {
+        opacity: 0.6;
+        transform: scale(1);
+    }
+    50% {
+        opacity: 0.4;
+    }
+    90% {
+        opacity: 0.6;
+    }
+    100% {
+        bottom: 110%;
+        opacity: 0;
+        transform: translateX(30px) scale(0.5);
+    }
 }
 
 /* Floating Elements */
@@ -596,7 +698,7 @@ body.has-magic-cursor select {
 /* Scroll Indicator */
 .scroll-indicator {
     position: absolute;
-    bottom: 140px;
+    bottom: 40px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -605,15 +707,27 @@ body.has-magic-cursor select {
     gap: var(--space-sm);
     opacity: 0;
     animation: fadeIn 1s ease forwards 1.5s;
-    z-index: 5;
+    z-index: 10;
+    text-decoration: none;
+    transition: transform 0.3s ease;
+}
+
+.scroll-indicator:hover {
+    transform: translateX(-50%) translateY(-5px);
+}
+
+.scroll-indicator:hover .scroll-mouse {
+    border-color: var(--color-gold-light);
+    box-shadow: 0 0 20px rgba(201, 162, 39, 0.4);
 }
 
 .scroll-mouse {
-    width: 25px;
-    height: 40px;
+    width: 28px;
+    height: 44px;
     border: 2px solid var(--color-gold);
     border-radius: 15px;
     position: relative;
+    transition: all 0.3s ease;
 }
 
 .scroll-wheel {
@@ -649,31 +763,30 @@ body.has-magic-cursor select {
 
 /* Section Wave Transition */
 .section-wave {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 120px;
-    overflow: hidden;
+    display: none;
 }
 
-.section-wave svg {
-    position: absolute;
-    bottom: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.section-wave path {
-    fill: var(--color-bg-medium);
+/* ==================== CURVED TRANSITION (DEPRECATED) ==================== */
+.curved-transition {
+    display: none;
 }
 
 /* ==================== DYNAMIC ABOUT SECTION ==================== */
 .about-section-dynamic {
     position: relative;
-    padding: 100px 0 80px;
-    background: linear-gradient(180deg, var(--color-bg-medium) 0%, var(--color-bg-dark) 100%);
-    overflow: hidden;
+    padding: 80px 0 100px;
+    background: var(--color-bg-dark);
+    overflow: visible;
+}
+
+/* Seamless top blend for about section - not needed anymore */
+.about-section-dynamic::before {
+    display: none;
+}
+
+/* Bottom gradient transition to journey section */
+.about-section-dynamic::after {
+    display: none;
 }
 
 .about-bg-dynamic {
@@ -683,9 +796,19 @@ body.has-magic-cursor select {
     width: 100%;
     height: 100%;
     background: 
-        radial-gradient(ellipse at 20% 20%, rgba(201, 162, 39, 0.08) 0%, transparent 50%),
-        radial-gradient(ellipse at 80% 80%, rgba(201, 162, 39, 0.05) 0%, transparent 50%),
-        radial-gradient(ellipse at 50% 50%, rgba(114, 47, 55, 0.05) 0%, transparent 60%);
+        radial-gradient(ellipse at 20% 20%, rgba(201, 162, 39, 0.06) 0%, transparent 50%),
+        radial-gradient(ellipse at 80% 80%, rgba(201, 162, 39, 0.04) 0%, transparent 50%),
+        radial-gradient(ellipse at 50% 50%, rgba(114, 47, 55, 0.03) 0%, transparent 60%);
+    animation: bgPulse 10s ease-in-out infinite;
+}
+
+@keyframes bgPulse {
+    0%, 100% {
+        opacity: 1;
+    }
+    50% {
+        opacity: 0.7;
+    }
 }
 
 .about-particles {
@@ -695,6 +818,51 @@ body.has-magic-cursor select {
     width: 100%;
     height: 100%;
     pointer-events: none;
+    overflow: hidden;
+}
+
+/* Ambient floating particles */
+.about-particles::before,
+.about-particles::after {
+    content: '';
+    position: absolute;
+    width: 6px;
+    height: 6px;
+    background: var(--color-gold);
+    border-radius: 50%;
+    opacity: 0.3;
+    animation: floatParticleAbout 12s ease-in-out infinite;
+}
+
+.about-particles::before {
+    top: 20%;
+    left: 15%;
+    animation-delay: 0s;
+}
+
+.about-particles::after {
+    top: 60%;
+    right: 20%;
+    animation-delay: 4s;
+}
+
+@keyframes floatParticleAbout {
+    0%, 100% {
+        transform: translateY(0) translateX(0);
+        opacity: 0.3;
+    }
+    25% {
+        transform: translateY(-30px) translateX(10px);
+        opacity: 0.6;
+    }
+    50% {
+        transform: translateY(-50px) translateX(-5px);
+        opacity: 0.4;
+    }
+    75% {
+        transform: translateY(-20px) translateX(15px);
+        opacity: 0.5;
+    }
 }
 
 /* About Intro */
@@ -1039,13 +1207,18 @@ body.has-magic-cursor select {
     left: 0;
     width: 100%;
     height: 100%;
-    z-index: 10000;
+    z-index: 9999;
     display: flex;
     align-items: center;
     justify-content: center;
     opacity: 0;
     visibility: hidden;
     transition: all 0.4s ease;
+}
+
+.lens-modal,
+.lens-modal * {
+    cursor: auto !important;
 }
 
 .lens-modal.active {
@@ -1092,7 +1265,7 @@ body.has-magic-cursor select {
     border-radius: 50%;
     color: var(--color-gold);
     font-size: 1rem;
-    cursor: pointer;
+    cursor: pointer !important;
     transition: all 0.3s ease;
     display: flex;
     align-items: center;
@@ -2202,9 +2375,35 @@ body.has-magic-cursor select {
 /* Journey Section */
 .journey-section {
     position: relative;
-    padding: 80px 0 60px;
+    padding: 100px 0 80px;
     background: var(--color-bg-dark);
     overflow: hidden;
+}
+
+/* Top blend for journey section */
+.journey-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, var(--color-bg-dark) 0%, transparent 100%);
+    z-index: 2;
+    pointer-events: none;
+}
+
+/* Bottom blend for journey to creator transition */
+.journey-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 120px;
+    background: linear-gradient(180deg, transparent 0%, var(--color-bg-dark) 100%);
+    z-index: 2;
+    pointer-events: none;
 }
 
 .journey-bg {
@@ -2215,7 +2414,7 @@ body.has-magic-cursor select {
     height: 100%;
     background-size: cover;
     background-position: center;
-    opacity: 0.1;
+    opacity: 0.08;
 }
 
 .section-overlay.dark {
@@ -2225,9 +2424,9 @@ body.has-magic-cursor select {
     width: 100%;
     height: 100%;
     background: linear-gradient(180deg, 
-        var(--color-bg-dark) 0%, 
-        rgba(10, 10, 15, 0.95) 50%,
-        var(--color-bg-dark) 100%
+        rgba(10, 10, 15, 0.98) 0%, 
+        rgba(10, 10, 15, 0.9) 50%,
+        rgba(10, 10, 15, 0.98) 100%
     );
 }
 
@@ -2592,6 +2791,102 @@ body.has-magic-cursor select {
 .journey-card[data-index="5"] { transition-delay: 0.5s; }
 .journey-card[data-index="6"] { transition-delay: 0.6s; }
 
+/* ==================== SEAMLESS SECTION ANIMATIONS ==================== */
+section {
+    opacity: 1;
+    transition: opacity 0.6s ease;
+}
+
+section.section-visible .animate-on-scroll {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Smooth content reveal on scroll */
+.about-intro,
+.dynamic-features,
+.lenses-dynamic {
+    opacity: 0;
+    transform: translateY(40px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-visible .about-intro {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.1s;
+}
+
+.section-visible .dynamic-features {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.3s;
+}
+
+.section-visible .lenses-dynamic {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.5s;
+}
+
+/* Stagger animation for lens hexagons */
+.lens-hex {
+    opacity: 0;
+    transform: translateY(30px) scale(0.9);
+    transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-visible .lens-hex {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+}
+
+.section-visible .lens-hex:nth-child(1) { transition-delay: 0.1s; }
+.section-visible .lens-hex:nth-child(2) { transition-delay: 0.2s; }
+.section-visible .lens-hex:nth-child(3) { transition-delay: 0.3s; }
+.section-visible .lens-hex:nth-child(4) { transition-delay: 0.4s; }
+.section-visible .lens-hex:nth-child(5) { transition-delay: 0.5s; }
+.section-visible .lens-hex:nth-child(6) { transition-delay: 0.6s; }
+
+/* Journey section content animations */
+.journey-map {
+    opacity: 0;
+    transform: translateY(30px);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-visible .journey-map {
+    opacity: 1;
+    transform: translateY(0);
+    transition-delay: 0.2s;
+}
+
+/* Creator section animations */
+.creator-card {
+    opacity: 0;
+    transform: translateY(40px) scale(0.98);
+    transition: all 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.section-visible .creator-card {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    transition-delay: 0.2s;
+}
+
+/* Footer reveal animation */
+.main-footer {
+    opacity: 0;
+    transform: translateY(20px);
+    transition: all 0.6s ease;
+}
+
+.main-footer.section-visible,
+footer.section-visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
 /* Journey Map Responsive */
 @media (max-width: 1100px) {
     .nav-links {
@@ -2659,6 +2954,32 @@ body.has-magic-cursor select {
     background: linear-gradient(180deg, var(--color-bg-dark) 0%, rgba(26, 26, 37, 1) 100%);
 }
 
+/* Top gradient blend for creator section */
+.creator-section::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, var(--color-bg-dark) 0%, transparent 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
+/* Bottom gradient blend for creator to footer transition */
+.creator-section::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100px;
+    background: linear-gradient(180deg, transparent 0%, var(--color-bg-dark) 100%);
+    z-index: 1;
+    pointer-events: none;
+}
+
 .creator-bg {
     position: absolute;
     top: 0;
@@ -2675,6 +2996,19 @@ body.has-magic-cursor select {
     position: relative;
     padding: 4rem 0 2rem;
     overflow: hidden;
+    background: var(--color-bg-dark);
+}
+
+/* Top gradient blend for footer */
+.main-footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 80px;
+    background: linear-gradient(180deg, var(--color-bg-dark) 0%, transparent 100%);
+    z-index: 1;
 }
 
 .footer-bg {
