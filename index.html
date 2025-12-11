@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Libri Magni | Great Books Portfolio</title>
+    <link rel="stylesheet" href="css/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,600;1,400&family=Playfair+Display:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Magical Cursor -->
+    <div class="magic-cursor" id="magicCursor"></div>
+    <div class="cursor-trail-container" id="cursorTrail"></div>
+
+    <!-- Navigation -->
+    <nav class="main-nav" id="mainNav">
+        <div class="nav-logo">
+            <i class="fas fa-book-open"></i>
+            <span class="logo-text">Libri Magni</span>
+        </div>
+        <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation">
+            <span></span>
+            <span></span>
+            <span></span>
+        </button>
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#hero" class="nav-link active">Home</a></li>
+            <li><a href="#about" class="nav-link">About</a></li>
+            <li><a href="#journey" class="nav-link">Journey</a></li>
+            <li class="nav-dropdown">
+                <a href="#" class="nav-link">Analyses <i class="fas fa-chevron-down"></i></a>
+                <ul class="dropdown-menu">
+                    <li><a href="pages/analysis1.html">I. Archetypal</a></li>
+                    <li><a href="pages/analysis2.html">II. Reader-Response</a></li>
+                    <li><a href="pages/analysis3.html">III. Feminism</a></li>
+                    <li><a href="pages/analysis4.html">IV. Queer Theory</a></li>
+                    <li><a href="pages/analysis5.html">V. Formalism</a></li>
+                    <li><a href="pages/analysis6.html">VI. Psychoanalytic</a></li>
+                </ul>
+            </li>
+            <li><a href="pages/summary.html" class="nav-link">Summary</a></li>
+            <li><a href="pages/reflection.html" class="nav-link">Reflection</a></li>
+            <li><a href="#creator" class="nav-link">Creator</a></li>
+        </ul>
+    </nav>
+
+    <!-- Scroll Progress -->
+    <div class="scroll-progress" id="scrollProgress"></div>
+
+    <!-- ==================== HERO SECTION ==================== -->
+    <section id="hero" class="hero-section">
+        <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1481627834876-b7833e8f5570?w=1920')"></div>
+        <div class="hero-overlay"></div>
+        
+        <!-- Floating Literary Elements -->
+        <div class="floating-elements">
+            <div class="float-item quill"><i class="fas fa-feather-alt"></i></div>
+            <div class="float-item book1"><i class="fas fa-book"></i></div>
+            <div class="float-item book2"><i class="fas fa-book-open"></i></div>
+            <div class="float-item scroll"><i class="fas fa-scroll"></i></div>
+            <div class="float-item ink"><i class="fas fa-pen-nib"></i></div>
+            <div class="float-item star1"><i class="fas fa-star"></i></div>
+            <div class="float-item star2"><i class="fas fa-star"></i></div>
+            <div class="float-item star3"><i class="fas fa-sparkles"></i></div>
+        </div>
+
+        <div class="hero-content">
+            <div class="hero-badge animate-fade-down">
+                <span class="badge-icon"><i class="fas fa-feather-alt"></i></span>
+                <span class="badge-text">Literary Portfolio • 2025</span>
+            </div>
+            
+            <h1 class="hero-title">
+                <span class="title-word animate-slide-up">Libri</span>
+                <span class="title-word gold animate-slide-up delay-1">Magni</span>
+            </h1>
+            
+            <div class="hero-subtitle-container animate-fade delay-2">
+                <div class="subtitle-line"></div>
+                <p class="hero-subtitle">A Journey Through the Great Books</p>
+                <div class="subtitle-line"></div>
+            </div>
+            
+            <p class="hero-description animate-fade delay-3">
+                Embark on a literary odyssey through time, exploring humanity's greatest narratives 
+                through the lenses of critical theory. Each page turn reveals new worlds, 
+                each analysis unlocks deeper understanding.
+            </p>
+            
+            <a href="#about" class="hero-cta animate-fade delay-4">
+                <span class="cta-text">Begin the Journey</span>
+                <span class="cta-icon"><i class="fas fa-angle-double-down"></i></span>
+            </a>
+        </div>
+
+        <!-- Scroll Indicator -->
+        <div class="scroll-indicator animate-fade delay-5">
+            <div class="scroll-mouse">
+                <div class="scroll-wheel"></div>
+            </div>
+            <span class="scroll-text">Scroll to Explore</span>
+        </div>
+
+        <!-- Section Transition -->
+        <div class="section-wave">
+            <svg viewBox="0 0 1440 120" preserveAspectRatio="none">
+                <path d="M0,60 C360,120 720,0 1080,60 C1260,90 1380,90 1440,60 L1440,120 L0,120 Z"></path>
+            </svg>
+        </div>
+    </section>
+
+    <!-- ==================== ABOUT SECTION ==================== -->
+    <section id="about" class="about-section">
+        <div class="about-bg" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920')"></div>
+        <div class="section-overlay"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <div class="header-ornament top">❦</div>
+                <span class="section-number">Part I</span>
+                <h2 class="section-title">About the Reader</h2>
+                <p class="section-subtitle">Introduction to the Reader & Learner</p>
+                <div class="header-ornament bottom">❦</div>
+            </div>
+
+            <div class="about-grid">
+                <!-- Main Introduction -->
+                <div class="about-main animate-on-scroll">
+                    <div class="intro-image">
+                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600" alt="Reading">
+                        <div class="image-frame"></div>
+                    </div>
+                    <div class="intro-text">
+                        <h3><i class="fas fa-book-reader"></i> Welcome, Fellow Traveler</h3>
+                        <p>Throughout this course, I have embarked on a transformative journey through the great literary works that have shaped human thought and culture. As a reader, I approach each text with curiosity and openness, seeking to understand not just the surface narrative but the deeper truths embedded within the pages of time.</p>
+                        <p>This portfolio represents my growth as a critical reader—someone who no longer merely consumes stories but engages in active dialogue with the authors, characters, and ideas that have echoed through centuries.</p>
+                    </div>
+                </div>
+
+                <!-- Info Cards -->
+                <div class="about-cards">
+                    <div class="info-card animate-on-scroll" data-delay="100">
+                        <div class="card-glow"></div>
+                        <div class="card-icon">
+                            <i class="fas fa-university"></i>
+                        </div>
+                        <h4>About Great Books</h4>
+                        <p>An exploration of literature's most enduring works—texts that transcend time and culture to speak to the universal human experience through multiple critical perspectives.</p>
+                    </div>
+                    
+                    <div class="info-card animate-on-scroll" data-delay="200">
+                        <div class="card-glow"></div>
+                        <div class="card-icon">
+                            <i class="fas fa-compass"></i>
+                        </div>
+                        <h4>Portfolio Purpose</h4>
+                        <p>This website serves as my culminating portfolio—six distinct literary analyses demonstrating critical thinking and the application of theoretical frameworks to timeless narratives.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Critical Lenses -->
+            <div class="lenses-section animate-on-scroll">
+                <h3 class="lenses-title">
+                    <span class="title-line left"></span>
+                    <span><i class="fas fa-eye"></i> Critical Lenses</span>
+                    <span class="title-line right"></span>
+                </h3>
+                <p class="lenses-subtitle">The Six Critical Lenses We Explored</p>
+                
+                <div class="lenses-grid">
+                    <div class="lens-card" data-lens="archetypal">
+                        <div class="lens-icon"><i class="fas fa-mask"></i></div>
+                        <span class="lens-name">Archetypal</span>
+                        <span class="lens-desc">Universal Patterns</span>
+                    </div>
+                    <div class="lens-card" data-lens="reader">
+                        <div class="lens-icon"><i class="fas fa-glasses"></i></div>
+                        <span class="lens-name">Reader-Response</span>
+                        <span class="lens-desc">Personal Meaning</span>
+                    </div>
+                    <div class="lens-card" data-lens="feminist">
+                        <div class="lens-icon"><i class="fas fa-venus"></i></div>
+                        <span class="lens-name">Feminism</span>
+                        <span class="lens-desc">Gender & Power</span>
+                    </div>
+                    <div class="lens-card" data-lens="queer">
+                        <div class="lens-icon"><i class="fas fa-rainbow"></i></div>
+                        <span class="lens-name">Queer Theory</span>
+                        <span class="lens-desc">Identity & Desire</span>
+                    </div>
+                    <div class="lens-card" data-lens="formalist">
+                        <div class="lens-icon"><i class="fas fa-shapes"></i></div>
+                        <span class="lens-name">Formalism</span>
+                        <span class="lens-desc">Form & Structure</span>
+                    </div>
+                    <div class="lens-card" data-lens="psycho">
+                        <div class="lens-icon"><i class="fas fa-brain"></i></div>
+                        <span class="lens-name">Psychoanalytic</span>
+                        <span class="lens-desc">The Unconscious</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Connecting Path to Journey -->
+        <div class="path-connector">
+            <svg class="connector-svg" viewBox="0 0 100 200" preserveAspectRatio="none">
+                <path class="connector-path" d="M50,0 Q20,50 50,100 Q80,150 50,200" stroke-dasharray="5,5"/>
+            </svg>
+            <div class="connector-icon">
+                <i class="fas fa-map-marked-alt"></i>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== JOURNEY/ROADMAP SECTION ==================== -->
+    <section id="journey" class="journey-section">
+        <div class="journey-bg" style="background-image: url('https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?w=1920')"></div>
+        <div class="section-overlay dark"></div>
+
+        <div class="container">
+            <div class="section-header">
+                <div class="header-ornament top light">❦</div>
+                <span class="section-number light">Part II</span>
+                <h2 class="section-title light">The Library</h2>
+                <p class="section-subtitle light">Six volumes of critical exploration await your discovery</p>
+                <div class="header-ornament bottom light">❦</div>
+            </div>
+
+            <!-- Unique Roadmap Design -->
+            <div class="journey-map">
+                <!-- Central Book Stack Visual -->
+                <div class="book-stack-container">
+                    <div class="floating-quill">
+                        <i class="fas fa-feather-alt"></i>
+                    </div>
+                </div>
+
+                <!-- Journey Path with Floating Cards -->
+                <div class="journey-path">
+                    <!-- Start Beacon -->
+                    <div class="journey-beacon start-beacon">
+                        <div class="beacon-glow"></div>
+                        <div class="beacon-icon">
+                            <i class="fas fa-door-open"></i>
+                        </div>
+                        <div class="beacon-label">Enter the Library</div>
+                    </div>
+
+                    <!-- Analysis Cards in Spiral/Scattered Layout -->
+                    <div class="analysis-cards-grid">
+                        <!-- Card 1 -->
+                        <div class="journey-card" data-index="1" style="--card-hue: 45;">
+                            <div class="card-spine"></div>
+                            <div class="card-pages">
+                                <div class="page-lines"></div>
+                            </div>
+                            <div class="card-cover">
+                                <div class="card-number">I</div>
+                                <div class="card-icon"><i class="fas fa-mask"></i></div>
+                                <h3>Archetypal</h3>
+                                <p>The Hero's Pattern</p>
+                                <span class="card-work">Film/Series Analysis</span>
+                                <a href="pages/analysis1.html" class="card-enter">
+                                    <span>Open Book</span>
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                            </div>
+                            <div class="card-bookmark"></div>
+                        </div>
+
+                        <!-- Card 2 -->
+                        <div class="journey-card" data-index="2" style="--card-hue: 180;">
+                            <div class="card-spine"></div>
+                            <div class="card-pages">
+                                <div class="page-lines"></div>
+                            </div>
+                            <div class="card-cover">
+                                <div class="card-number">II</div>
+                                <div class="card-icon"><i class="fas fa-glasses"></i></div>
+                                <h3>Reader-Response</h3>
+                                <p>The Reader's Voice</p>
+                                <span class="card-work">Panchatantra</span>
+                                <a href="pages/analysis2.html" class="card-enter">
+                                    <span>Open Book</span>
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                            </div>
+                            <div class="card-bookmark"></div>
+                        </div>
+
+                        <!-- Card 3 -->
+                        <div class="journey-card" data-index="3" style="--card-hue: 320;">
+                            <div class="card-spine"></div>
+                            <div class="card-pages">
+                                <div class="page-lines"></div>
+                            </div>
+                            <div class="card-cover">
+                                <div class="card-number">III</div>
+                                <div class="card-icon"><i class="fas fa-venus"></i></div>
+                                <h3>Feminism</h3>
+                                <p>The Woman's Voice</p>
+                                <span class="card-work">Cupid and Psyche</span>
+                                <a href="pages/analysis3.html" class="card-enter">
+                                    <span>Open Book</span>
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                            </div>
+                            <div class="card-bookmark"></div>
+                        </div>
+
+                        <!-- Card 4 -->
+                        <div class="journey-card" data-index="4" style="--card-hue: 280;">
+                            <div class="card-spine"></div>
+                            <div class="card-pages">
+                                <div class="page-lines"></div>
+                            </div>
+                            <div class="card-cover">
+                                <div class="card-number">IV</div>
+                                <div class="card-icon"><i class="fas fa-rainbow"></i></div>
+                                <h3>Queer Theory</h3>
+                                <p>The Spectrum of Love</p>
+                                <span class="card-work">Iphis and Ianthe</span>
+                                <a href="pages/analysis4.html" class="card-enter">
+                                    <span>Open Book</span>
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                            </div>
+                            <div class="card-bookmark"></div>
+                        </div>
+
+                        <!-- Card 5 -->
+                        <div class="journey-card" data-index="5" style="--card-hue: 200;">
+                            <div class="card-spine"></div>
+                            <div class="card-pages">
+                                <div class="page-lines"></div>
+                            </div>
+                            <div class="card-cover">
+                                <div class="card-number">V</div>
+                                <div class="card-icon"><i class="fas fa-shapes"></i></div>
+                                <h3>Formalism</h3>
+                                <p>Perfect Form</p>
+                                <span class="card-work">A Rose for Emily</span>
+                                <a href="pages/analysis5.html" class="card-enter">
+                                    <span>Open Book</span>
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                            </div>
+                            <div class="card-bookmark"></div>
+                        </div>
+
+                        <!-- Card 6 -->
+                        <div class="journey-card" data-index="6" style="--card-hue: 350;">
+                            <div class="card-spine"></div>
+                            <div class="card-pages">
+                                <div class="page-lines"></div>
+                            </div>
+                            <div class="card-cover">
+                                <div class="card-number">VI</div>
+                                <div class="card-icon"><i class="fas fa-brain"></i></div>
+                                <h3>Psychoanalytic</h3>
+                                <p>The Deep Soul</p>
+                                <span class="card-work">Kulakog and Tilmag</span>
+                                <a href="pages/analysis6.html" class="card-enter">
+                                    <span>Open Book</span>
+                                    <i class="fas fa-book-open"></i>
+                                </a>
+                            </div>
+                            <div class="card-bookmark"></div>
+                        </div>
+                    </div>
+
+                    <!-- End Beacon -->
+                    <div class="journey-beacon end-beacon">
+                        <div class="beacon-glow"></div>
+                        <div class="beacon-icon">
+                            <i class="fas fa-scroll"></i>
+                        </div>
+                        <div class="beacon-label">Complete Your Tale</div>
+                        <div class="beacon-links">
+                            <a href="pages/summary.html" class="beacon-btn"><i class="fas fa-list-alt"></i> Summary</a>
+                            <a href="pages/reflection.html" class="beacon-btn primary"><i class="fas fa-pen-fancy"></i> Reflection</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Decorative Elements -->
+                <div class="journey-particles">
+                    <span class="particle"></span>
+                    <span class="particle"></span>
+                    <span class="particle"></span>
+                    <span class="particle"></span>
+                    <span class="particle"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== CREATOR SECTION ==================== -->
+    <section id="creator" class="creator-section">
+        <div class="creator-bg" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920')"></div>
+        <div class="section-overlay"></div>
+        
+        <div class="container">
+            <div class="section-header">
+                <div class="header-ornament top">❦</div>
+                <span class="section-number">Part III</span>
+                <h2 class="section-title">Meet the Creator</h2>
+                <p class="section-subtitle">The mind behind this literary journey</p>
+                <div class="header-ornament bottom">❦</div>
+            </div>
+
+            <div class="creator-card animate-on-scroll">
+                <div class="creator-image">
+                    <img src="images/JOVEL PORTUGUEZ_DP.jpg" alt="Jovel B. Portuguez">
+                    <div class="creator-image-frame"></div>
+                </div>
+                
+                <div class="creator-info">
+                    <h4 class="creator-name">Jovel B. Portuguez</h4>
+                    <p class="creator-tagline">4th Year BSIT Student • Student Leader 👋</p>
+                    
+                    <div class="creator-bio">
+                        <p><i class="fas fa-eye"></i> Interested in React, React Native, Vue.js, Vuetify, full-stack development, eSports management, video editing, and photography</p>
+                        <p><i class="fas fa-seedling"></i> Currently learning React, advanced Vue.js, backend development, and system design</p>
+                        <p><i class="fas fa-handshake"></i> Looking to collaborate on open-source projects related to management systems and automation</p>
+                        <p><i class="fas fa-gamepad"></i> Part of eSports teams <strong>Trucidation Eros</strong> & <strong>Astral Aces</strong> — merging gaming, tech, and creative media!</p>
+                    </div>
+
+                    <div class="creator-skills">
+                        <span class="skill-tag">Video Editing</span>
+                        <span class="skill-tag">Videography</span>
+                        <span class="skill-tag">Graphic Design</span>
+                        <span class="skill-tag">Web Design</span>
+                        <span class="skill-tag">Visual Design</span>
+                        <span class="skill-tag">Network Support</span>
+                        <span class="skill-tag">IT Consulting</span>
+                        <span class="skill-tag">App Development</span>
+                        <span class="skill-tag">Database Development</span>
+                        <span class="skill-tag">Information Management</span>
+                    </div>
+
+                    <div class="creator-roles">
+                        <div class="role-item current">
+                            <i class="fas fa-star"></i>
+                            <span>Public Relations Officer — UNC Federation of Student Organizations, Fraternities and Sororities</span>
+                        </div>
+                        <div class="role-item current">
+                            <i class="fas fa-star"></i>
+                            <span>President — Black Box Society</span>
+                        </div>
+                        <div class="role-item current">
+                            <i class="fas fa-star"></i>
+                            <span>Official Tabulator — Miss Bicolandia</span>
+                        </div>
+                        <div class="role-item past">
+                            <i class="fas fa-history"></i>
+                            <span>Former Chairperson — UNC School of Computer and Information Sciences Council</span>
+                        </div>
+                        <div class="role-item past">
+                            <i class="fas fa-history"></i>
+                            <span>Former Vice Chairperson — UNC School of Computer and Information Sciences Council</span>
+                        </div>
+                        <div class="role-item past">
+                            <i class="fas fa-history"></i>
+                            <span>Former Vice President — Barangay Youth Leaders for Health - Bonifacio</span>
+                        </div>
+                    </div>
+
+                    <div class="creator-education">
+                        <i class="fas fa-graduation-cap"></i>
+                        <span>Studying at <strong>University of Nueva Caceres</strong></span>
+                    </div>
+
+                    <div class="creator-contact">
+                        <span class="pronouns"><i class="fas fa-user"></i> He/Him</span>
+                        <a href="mailto:" class="contact-btn"><i class="fas fa-envelope"></i> Email</a>
+                        <a href="#" class="contact-btn"><i class="fab fa-linkedin"></i> LinkedIn</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FOOTER ==================== -->
+    <footer class="main-footer">
+        <div class="footer-bg" style="background-image: url('https://images.unsplash.com/photo-1457369804613-52c61a468e7d?w=1920')"></div>
+        <div class="footer-overlay"></div>
+        
+        <div class="container">
+            <div class="footer-content">
+                <!-- Brand Section -->
+                <div class="footer-brand">
+                    <div class="brand-logo">
+                        <i class="fas fa-book-open"></i>
+                        <span>Libri Magni</span>
+                    </div>
+                    <p class="brand-tagline">"In books, freedom"</p>
+                    <p class="brand-description">A journey through literature's greatest works</p>
+                </div>
+
+                <!-- Quick Links Grid -->
+                <div class="footer-grid">
+                    <div class="footer-column">
+                        <h4><i class="fas fa-compass"></i> Navigate</h4>
+                        <ul>
+                            <li><a href="#hero">Home</a></li>
+                            <li><a href="#about">About</a></li>
+                            <li><a href="#journey">Journey</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4><i class="fas fa-scroll"></i> Pages</h4>
+                        <ul>
+                            <li><a href="pages/summary.html">Summary</a></li>
+                            <li><a href="pages/reflection.html">Reflection</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4><i class="fas fa-book"></i> Analyses I-III</h4>
+                        <ul>
+                            <li><a href="pages/analysis1.html">I. Archetypal</a></li>
+                            <li><a href="pages/analysis2.html">II. Reader-Response</a></li>
+                            <li><a href="pages/analysis3.html">III. Feminism</a></li>
+                        </ul>
+                    </div>
+
+                    <div class="footer-column">
+                        <h4><i class="fas fa-book-open"></i> Analyses IV-VI</h4>
+                        <ul>
+                            <li><a href="pages/analysis4.html">IV. Queer Theory</a></li>
+                            <li><a href="pages/analysis5.html">V. Formalism</a></li>
+                            <li><a href="pages/analysis6.html">VI. Psychoanalytic</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Divider -->
+                <div class="footer-divider">
+                    <span>❋</span>
+                </div>
+
+                <!-- Bottom Info -->
+                <div class="footer-bottom">
+                    <div class="footer-info">
+                        <p><i class="fas fa-graduation-cap"></i> Great Books Final Project</p>
+                        <p><i class="fas fa-calendar-alt"></i> December 2025</p>
+                        <p><i class="fas fa-university"></i> Literary Analysis Portfolio</p>
+                    </div>
+                    <div class="footer-meta">
+                        <p class="copyright">&copy; 2025 Libri Magni — Literary Portfolio</p>
+                        <p class="latin-quote">Finis coronat opus</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Back to Top Button -->
+    <button class="back-to-top" id="backToTop" aria-label="Back to top">
+        <i class="fas fa-chevron-up"></i>
+    </button>
+
+    <!-- Book Opening Animation Overlay -->
+    <div class="book-transition" id="bookTransition">
+        <div class="book-animation">
+            <div class="book-3d">
+                <!-- Back cover (stationary, shows inner page) -->
+                <div class="book-cover-back"></div>
+                
+                <!-- Spine -->
+                <div class="book-spine"></div>
+                
+                <!-- Pages that flip -->
+                <div class="book-pages">
+                    <div class="page"></div>
+                    <div class="page"></div>
+                    <div class="page"></div>
+                    <div class="page"></div>
+                    <div class="page"></div>
+                </div>
+                
+                <!-- Front cover (opens) -->
+                <div class="book-cover-front">
+                    <div class="cover-content">
+                        <div class="cover-icon"><i class="fas fa-book-open"></i></div>
+                        <div class="cover-title">Opening...</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/main.js"></script>
+</body>
+</html>
