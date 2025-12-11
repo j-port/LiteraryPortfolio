@@ -163,31 +163,62 @@ function initScrollProgress() {
 function initScrollAnimations() {
     const observerOptions = {
         root: null,
-        rootMargin: '0px',
+        rootMargin: '0px 0px -50px 0px',
         threshold: 0.1
     };
     
     const observer = new IntersectionObserver((entries) => {
-        entries.forEach((entry, index) => {
+        entries.forEach((entry) => {
             if (entry.isIntersecting) {
-                // Add delay for staggered animations
-                const delay = entry.target.dataset.delay || 0;
+                entry.target.classList.add('visible');
                 
-                setTimeout(() => {
-                    entry.target.classList.add('visible');
-                }, delay);
+                // For lenses section, trigger child animations
+                if (entry.target.classList.contains('lenses-section')) {
+                    entry.target.querySelectorAll('.lens-card-modern').forEach((card, index) => {
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, index * 100);
+                    });
+                }
             }
         });
     }, observerOptions);
     
     // Observe all animated elements
-    document.querySelectorAll('.animate-on-scroll, .roadmap-stop').forEach((element, index) => {
-        // Add stagger delay for roadmap stops
-        if (element.classList.contains('roadmap-stop')) {
-            element.style.transitionDelay = `${index * 0.15}s`;
-        }
+    const animatedElements = document.querySelectorAll(
+        '.animate-on-scroll, .roadmap-stop, .feature-box, .lens-hex, .about-hero-text, .journey-continue, .lenses-dynamic'
+    );
+    
+    animatedElements.forEach((element) => {
         observer.observe(element);
     });
+    
+    // Add floating particles to about section
+    createAboutParticles();
+}
+
+// Create floating particles for about section
+function createAboutParticles() {
+    const container = document.getElementById('aboutParticles');
+    if (!container) return;
+    
+    for (let i = 0; i < 20; i++) {
+        const particle = document.createElement('div');
+        particle.className = 'floating-particle';
+        particle.style.cssText = `
+            position: absolute;
+            width: ${Math.random() * 4 + 2}px;
+            height: ${Math.random() * 4 + 2}px;
+            background: rgba(201, 162, 39, ${Math.random() * 0.3 + 0.1});
+            border-radius: 50%;
+            left: ${Math.random() * 100}%;
+            top: ${Math.random() * 100}%;
+            animation: floatParticle ${Math.random() * 10 + 10}s ease-in-out infinite;
+            animation-delay: ${Math.random() * 5}s;
+        `;
+        container.appendChild(particle);
+    }
 }
 
 /* ==================== SMOOTH SCROLL ==================== */
@@ -240,21 +271,64 @@ function initBackToTop() {
 function initParallax() {
     const heroContent = document.querySelector('.hero-content');
     const floatingElements = document.querySelectorAll('.float-item');
+    const heroBg = document.querySelector('.hero-bg');
+    const aboutBg = document.querySelector('.about-bg');
+    const journeyBg = document.querySelector('.journey-bg');
+    
+    // Throttle scroll events for performance
+    let ticking = false;
     
     window.addEventListener('scroll', () => {
-        const scrolled = window.scrollY;
-        const windowHeight = window.innerHeight;
-        
-        // Hero content parallax
-        if (heroContent && scrolled < windowHeight) {
-            heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
-            heroContent.style.opacity = 1 - (scrolled / windowHeight) * 1.2;
+        if (!ticking) {
+            window.requestAnimationFrame(() => {
+                const scrolled = window.scrollY;
+                const windowHeight = window.innerHeight;
+                
+                // Hero content parallax
+                if (heroContent && scrolled < windowHeight) {
+                    heroContent.style.transform = `translateY(${scrolled * 0.3}px)`;
+                    heroContent.style.opacity = 1 - (scrolled / windowHeight) * 1.2;
+                }
+                
+                // Background parallax
+                if (heroBg && scrolled < windowHeight * 1.5) {
+                    heroBg.style.transform = `translateY(${scrolled * 0.4}px)`;
+                }
+                
+                if (aboutBg) {
+                    const aboutSection = document.getElementById('about');
+                    if (aboutSection) {
+                        const aboutTop = aboutSection.offsetTop;
+                        const aboutScroll = scrolled - aboutTop + windowHeight;
+                        if (aboutScroll > 0 && aboutScroll < windowHeight * 2) {
+                            aboutBg.style.transform = `translateY(${aboutScroll * 0.1}px)`;
+                        }
+                    }
+                }
+                
+                // Floating elements parallax with rotation
+                floatingElements.forEach((el, index) => {
+                    const speed = 0.05 + (index * 0.02);
+                    const rotation = Math.sin(scrolled * 0.002 + index) * 5;
+                    el.style.transform = `translateY(${scrolled * speed}px) rotate(${rotation}deg)`;
+                });
+                
+                ticking = false;
+            });
+            ticking = true;
         }
+    });
+    
+    // Mouse parallax for floating elements
+    document.addEventListener('mousemove', (e) => {
+        const mouseX = (e.clientX / window.innerWidth - 0.5) * 2;
+        const mouseY = (e.clientY / window.innerHeight - 0.5) * 2;
         
-        // Floating elements parallax
         floatingElements.forEach((el, index) => {
-            const speed = 0.05 + (index * 0.02);
-            el.style.transform = `translateY(${scrolled * speed}px)`;
+            const depth = 1 + (index * 0.5);
+            const moveX = mouseX * 20 * depth;
+            const moveY = mouseY * 20 * depth;
+            el.style.transform = `translate(${moveX}px, ${moveY}px)`;
         });
     });
 }

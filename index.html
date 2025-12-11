@@ -111,109 +111,161 @@
     </section>
 
     <!-- ==================== ABOUT SECTION ==================== -->
-    <section id="about" class="about-section">
-        <div class="about-bg" style="background-image: url('https://images.unsplash.com/photo-1507842217343-583bb7270b66?w=1920')"></div>
-        <div class="section-overlay"></div>
+    <section id="about" class="about-section-dynamic">
+        <div class="about-bg-dynamic"></div>
+        <div class="about-particles" id="aboutParticles"></div>
         
         <div class="container">
-            <div class="section-header">
-                <div class="header-ornament top">❦</div>
-                <span class="section-number">Part I</span>
-                <h2 class="section-title">About the Reader</h2>
-                <p class="section-subtitle">Introduction to the Reader & Learner</p>
-                <div class="header-ornament bottom">❦</div>
+            <!-- Intro Area -->
+            <div class="about-intro">
+                <div class="intro-badge animate-on-scroll">
+                    <span class="badge-line"></span>
+                    <span class="badge-text">Part I • The Reader</span>
+                    <span class="badge-line"></span>
+                </div>
+                
+                <h2 class="about-title animate-on-scroll">
+                    <span class="title-line">A Journey Through</span>
+                    <span class="title-highlight">Great Literature</span>
+                </h2>
+                
+                <p class="about-description animate-on-scroll">
+                    Throughout this course, I have embarked on a transformative journey through the great literary works 
+                    that have shaped human thought and culture. This portfolio represents my growth as a critical reader—
+                    someone who engages in active dialogue with the authors, characters, and ideas that echo through centuries.
+                </p>
             </div>
 
-            <div class="about-grid">
-                <!-- Main Introduction -->
-                <div class="about-main animate-on-scroll">
-                    <div class="intro-image">
-                        <img src="https://images.unsplash.com/photo-1456513080510-7bf3a84b82f8?w=600" alt="Reading">
-                        <div class="image-frame"></div>
-                    </div>
-                    <div class="intro-text">
-                        <h3><i class="fas fa-book-reader"></i> Welcome, Fellow Traveler</h3>
-                        <p>Throughout this course, I have embarked on a transformative journey through the great literary works that have shaped human thought and culture. As a reader, I approach each text with curiosity and openness, seeking to understand not just the surface narrative but the deeper truths embedded within the pages of time.</p>
-                        <p>This portfolio represents my growth as a critical reader—someone who no longer merely consumes stories but engages in active dialogue with the authors, characters, and ideas that have echoed through centuries.</p>
+            <!-- Dynamic Feature Boxes -->
+            <div class="dynamic-features">
+                <div class="feature-box animate-on-scroll" style="--delay: 0">
+                    <div class="feature-box-bg"></div>
+                    <div class="feature-box-content">
+                        <div class="feature-number">01</div>
+                        <div class="feature-icon-dynamic">
+                            <i class="fas fa-book-open"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h3>Great Books</h3>
+                        <p>Exploring humanity's most enduring literary works that transcend time, culture, and language.</p>
+                        <div class="feature-decoration"></div>
                     </div>
                 </div>
-
-                <!-- Info Cards -->
-                <div class="about-cards">
-                    <div class="info-card animate-on-scroll" data-delay="100">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <i class="fas fa-university"></i>
+                
+                <div class="feature-box animate-on-scroll" style="--delay: 1">
+                    <div class="feature-box-bg"></div>
+                    <div class="feature-box-content">
+                        <div class="feature-number">02</div>
+                        <div class="feature-icon-dynamic">
+                            <i class="fas fa-scroll"></i>
+                            <div class="icon-ring"></div>
                         </div>
-                        <h4>About Great Books</h4>
-                        <p>An exploration of literature's most enduring works—texts that transcend time and culture to speak to the universal human experience through multiple critical perspectives.</p>
+                        <h3>Portfolio</h3>
+                        <p>Six distinct literary analyses demonstrating critical thinking through different theoretical lenses.</p>
+                        <div class="feature-decoration"></div>
+                    </div>
+                </div>
+                
+                <div class="feature-box animate-on-scroll" style="--delay: 2">
+                    <div class="feature-box-bg"></div>
+                    <div class="feature-box-content">
+                        <div class="feature-number">03</div>
+                        <div class="feature-icon-dynamic">
+                            <i class="fas fa-brain"></i>
+                            <div class="icon-ring"></div>
+                        </div>
+                        <h3>Critical Thinking</h3>
+                        <p>Applying theoretical frameworks to unlock deeper meaning hidden within timeless narratives.</p>
+                        <div class="feature-decoration"></div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Critical Lenses Section -->
+            <div class="lenses-dynamic">
+                <div class="lenses-header-dynamic animate-on-scroll">
+                    <div class="header-icon">
+                        <i class="fas fa-eye"></i>
+                    </div>
+                    <h3>Critical Lenses</h3>
+                    <p>Click to explore each perspective</p>
+                </div>
+                
+                <div class="lenses-hexagon-grid">
+                    <div class="lens-hex animate-on-scroll" data-lens="archetypal" style="--delay: 0">
+                        <div class="hex-inner">
+                            <div class="hex-icon"><i class="fas fa-mask"></i></div>
+                            <span class="hex-name">Archetypal</span>
+                        </div>
+                        <div class="hex-glow"></div>
                     </div>
                     
-                    <div class="info-card animate-on-scroll" data-delay="200">
-                        <div class="card-glow"></div>
-                        <div class="card-icon">
-                            <i class="fas fa-compass"></i>
+                    <div class="lens-hex animate-on-scroll" data-lens="reader" style="--delay: 1">
+                        <div class="hex-inner">
+                            <div class="hex-icon"><i class="fas fa-glasses"></i></div>
+                            <span class="hex-name">Reader-Response</span>
                         </div>
-                        <h4>Portfolio Purpose</h4>
-                        <p>This website serves as my culminating portfolio—six distinct literary analyses demonstrating critical thinking and the application of theoretical frameworks to timeless narratives.</p>
+                        <div class="hex-glow"></div>
+                    </div>
+                    
+                    <div class="lens-hex animate-on-scroll" data-lens="feminist" style="--delay: 2">
+                        <div class="hex-inner">
+                            <div class="hex-icon"><i class="fas fa-venus"></i></div>
+                            <span class="hex-name">Feminism</span>
+                        </div>
+                        <div class="hex-glow"></div>
+                    </div>
+                    
+                    <div class="lens-hex animate-on-scroll" data-lens="queer" style="--delay: 3">
+                        <div class="hex-inner">
+                            <div class="hex-icon"><i class="fas fa-rainbow"></i></div>
+                            <span class="hex-name">Queer Theory</span>
+                        </div>
+                        <div class="hex-glow"></div>
+                    </div>
+                    
+                    <div class="lens-hex animate-on-scroll" data-lens="formalist" style="--delay: 4">
+                        <div class="hex-inner">
+                            <div class="hex-icon"><i class="fas fa-shapes"></i></div>
+                            <span class="hex-name">Formalism</span>
+                        </div>
+                        <div class="hex-glow"></div>
+                    </div>
+                    
+                    <div class="lens-hex animate-on-scroll" data-lens="psycho" style="--delay: 5">
+                        <div class="hex-inner">
+                            <div class="hex-icon"><i class="fas fa-brain"></i></div>
+                            <span class="hex-name">Psychoanalytic</span>
+                        </div>
+                        <div class="hex-glow"></div>
                     </div>
                 </div>
-            </div>
-
-            <!-- Critical Lenses -->
-            <div class="lenses-section animate-on-scroll">
-                <h3 class="lenses-title">
-                    <span class="title-line left"></span>
-                    <span><i class="fas fa-eye"></i> Critical Lenses</span>
-                    <span class="title-line right"></span>
-                </h3>
-                <p class="lenses-subtitle">The Six Critical Lenses We Explored</p>
-                
-                <div class="lenses-grid">
-                    <div class="lens-card" data-lens="archetypal">
-                        <div class="lens-icon"><i class="fas fa-mask"></i></div>
-                        <span class="lens-name">Archetypal</span>
-                        <span class="lens-desc">Universal Patterns</span>
-                    </div>
-                    <div class="lens-card" data-lens="reader">
-                        <div class="lens-icon"><i class="fas fa-glasses"></i></div>
-                        <span class="lens-name">Reader-Response</span>
-                        <span class="lens-desc">Personal Meaning</span>
-                    </div>
-                    <div class="lens-card" data-lens="feminist">
-                        <div class="lens-icon"><i class="fas fa-venus"></i></div>
-                        <span class="lens-name">Feminism</span>
-                        <span class="lens-desc">Gender & Power</span>
-                    </div>
-                    <div class="lens-card" data-lens="queer">
-                        <div class="lens-icon"><i class="fas fa-rainbow"></i></div>
-                        <span class="lens-name">Queer Theory</span>
-                        <span class="lens-desc">Identity & Desire</span>
-                    </div>
-                    <div class="lens-card" data-lens="formalist">
-                        <div class="lens-icon"><i class="fas fa-shapes"></i></div>
-                        <span class="lens-name">Formalism</span>
-                        <span class="lens-desc">Form & Structure</span>
-                    </div>
-                    <div class="lens-card" data-lens="psycho">
-                        <div class="lens-icon"><i class="fas fa-brain"></i></div>
-                        <span class="lens-name">Psychoanalytic</span>
-                        <span class="lens-desc">The Unconscious</span>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <!-- Connecting Path to Journey -->
-        <div class="path-connector">
-            <svg class="connector-svg" viewBox="0 0 100 200" preserveAspectRatio="none">
-                <path class="connector-path" d="M50,0 Q20,50 50,100 Q80,150 50,200" stroke-dasharray="5,5"/>
-            </svg>
-            <div class="connector-icon">
-                <i class="fas fa-map-marked-alt"></i>
             </div>
         </div>
     </section>
+
+    <!-- Lens Modal Dialog -->
+    <div class="lens-modal" id="lensModal">
+        <div class="lens-modal-overlay"></div>
+        <div class="lens-modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="modal-header">
+                <div class="modal-icon" id="modalIcon">
+                    <i class="fas fa-mask"></i>
+                </div>
+                <h2 id="modalTitle">Archetypal Criticism</h2>
+                <span class="modal-subtitle" id="modalSubtitle">Universal Patterns</span>
+            </div>
+            <div class="modal-body" id="modalBody">
+                <p>Content will be loaded here...</p>
+            </div>
+            <div class="modal-footer">
+                <span class="modal-hint"><i class="fas fa-lightbulb"></i> This lens helps us understand recurring patterns in literature</span>
+            </div>
+        </div>
+    </div>
 
     <!-- ==================== JOURNEY/ROADMAP SECTION ==================== -->
     <section id="journey" class="journey-section">
@@ -221,35 +273,17 @@
         <div class="section-overlay dark"></div>
 
         <div class="container">
-            <div class="section-header">
-                <div class="header-ornament top light">❦</div>
-                <span class="section-number light">Part II</span>
+            <div class="section-header modern">
+                <span class="section-tag"><i class="fas fa-book-open"></i> Part II</span>
                 <h2 class="section-title light">The Library</h2>
                 <p class="section-subtitle light">Six volumes of critical exploration await your discovery</p>
-                <div class="header-ornament bottom light">❦</div>
             </div>
 
-            <!-- Unique Roadmap Design -->
+            <!-- Library Collection -->
             <div class="journey-map">
-                <!-- Central Book Stack Visual -->
-                <div class="book-stack-container">
-                    <div class="floating-quill">
-                        <i class="fas fa-feather-alt"></i>
-                    </div>
-                </div>
-
-                <!-- Journey Path with Floating Cards -->
+                <!-- Journey Path with Cards -->
                 <div class="journey-path">
-                    <!-- Start Beacon -->
-                    <div class="journey-beacon start-beacon">
-                        <div class="beacon-glow"></div>
-                        <div class="beacon-icon">
-                            <i class="fas fa-door-open"></i>
-                        </div>
-                        <div class="beacon-label">Enter the Library</div>
-                    </div>
-
-                    <!-- Analysis Cards in Spiral/Scattered Layout -->
+                    <!-- Analysis Cards Grid -->
                     <div class="analysis-cards-grid">
                         <!-- Card 1 -->
                         <div class="journey-card" data-index="1" style="--card-hue: 45;">
@@ -372,27 +406,20 @@
                         </div>
                     </div>
 
-                    <!-- End Beacon -->
-                    <div class="journey-beacon end-beacon">
-                        <div class="beacon-glow"></div>
-                        <div class="beacon-icon">
-                            <i class="fas fa-scroll"></i>
-                        </div>
-                        <div class="beacon-label">Complete Your Tale</div>
-                        <div class="beacon-links">
-                            <a href="pages/summary.html" class="beacon-btn"><i class="fas fa-list-alt"></i> Summary</a>
-                            <a href="pages/reflection.html" class="beacon-btn primary"><i class="fas fa-pen-fancy"></i> Reflection</a>
+                    <!-- Continue Journey Links -->
+                    <div class="journey-continue">
+                        <div class="continue-line"></div>
+                        <div class="continue-links">
+                            <a href="pages/summary.html" class="continue-btn">
+                                <i class="fas fa-list-alt"></i>
+                                <span>Summary</span>
+                            </a>
+                            <a href="pages/reflection.html" class="continue-btn primary">
+                                <i class="fas fa-pen-fancy"></i>
+                                <span>Reflection</span>
+                            </a>
                         </div>
                     </div>
-                </div>
-
-                <!-- Decorative Elements -->
-                <div class="journey-particles">
-                    <span class="particle"></span>
-                    <span class="particle"></span>
-                    <span class="particle"></span>
-                    <span class="particle"></span>
-                    <span class="particle"></span>
                 </div>
             </div>
         </div>
@@ -596,5 +623,144 @@
     </div>
 
     <script src="js/main.js"></script>
+    <script>
+        // Lens Modal Functionality
+        const lensData = {
+            archetypal: {
+                title: 'Archetypal Criticism',
+                subtitle: 'Universal Patterns & Symbols',
+                icon: 'fa-mask',
+                content: `
+                    <p><strong>What is it?</strong> Archetypal criticism examines the universal patterns, symbols, and character types that recur across different cultures and time periods in literature.</p>
+                    <p><strong>Key Concepts:</strong></p>
+                    <ul>
+                        <li><strong>The Hero's Journey</strong> - The monomyth structure of departure, initiation, and return</li>
+                        <li><strong>Universal Symbols</strong> - Water (rebirth), darkness (unknown), light (knowledge)</li>
+                        <li><strong>Character Archetypes</strong> - The Hero, Mentor, Shadow, Trickster, Threshold Guardian</li>
+                        <li><strong>Collective Unconscious</strong> - Shared memories and ideas inherited from ancestors</li>
+                    </ul>
+                    <p><strong>Key Theorist:</strong> Carl Jung & Joseph Campbell</p>
+                `
+            },
+            reader: {
+                title: 'Reader-Response Criticism',
+                subtitle: 'Personal Meaning & Interpretation',
+                icon: 'fa-glasses',
+                content: `
+                    <p><strong>What is it?</strong> Reader-response criticism focuses on the reader's experience and interpretation of a text, arguing that meaning is created through the interaction between reader and text.</p>
+                    <p><strong>Key Concepts:</strong></p>
+                    <ul>
+                        <li><strong>Active Reading</strong> - Readers actively construct meaning rather than passively receiving it</li>
+                        <li><strong>Interpretive Communities</strong> - Groups who share reading strategies and interpretations</li>
+                        <li><strong>Gaps and Blanks</strong> - Spaces in text that readers fill with their imagination</li>
+                        <li><strong>Personal Experience</strong> - How individual backgrounds shape understanding</li>
+                    </ul>
+                    <p><strong>Key Theorists:</strong> Stanley Fish, Wolfgang Iser, Louise Rosenblatt</p>
+                `
+            },
+            feminist: {
+                title: 'Feminist Criticism',
+                subtitle: 'Gender, Power & Representation',
+                icon: 'fa-venus',
+                content: `
+                    <p><strong>What is it?</strong> Feminist criticism examines how literature reinforces or challenges the economic, political, social, and psychological oppression of women.</p>
+                    <p><strong>Key Concepts:</strong></p>
+                    <ul>
+                        <li><strong>Patriarchy</strong> - Systems of male dominance in society and literature</li>
+                        <li><strong>Gender Roles</strong> - Socially constructed expectations for men and women</li>
+                        <li><strong>The Male Gaze</strong> - How women are depicted from a masculine perspective</li>
+                        <li><strong>Gynocriticism</strong> - Focus on literature written by women</li>
+                    </ul>
+                    <p><strong>Key Theorists:</strong> Simone de Beauvoir, Elaine Showalter, Judith Butler</p>
+                `
+            },
+            queer: {
+                title: 'Queer Theory',
+                subtitle: 'Identity, Desire & Norms',
+                icon: 'fa-rainbow',
+                content: `
+                    <p><strong>What is it?</strong> Queer theory challenges heteronormative assumptions and explores how sexuality and gender identity are represented and constructed in literature.</p>
+                    <p><strong>Key Concepts:</strong></p>
+                    <ul>
+                        <li><strong>Heteronormativity</strong> - The assumption that heterosexuality is the default</li>
+                        <li><strong>Gender Performativity</strong> - Gender as a repeated performance rather than fixed identity</li>
+                        <li><strong>Binary Deconstruction</strong> - Challenging male/female, gay/straight binaries</li>
+                        <li><strong>Queer Reading</strong> - Finding non-normative meanings in texts</li>
+                    </ul>
+                    <p><strong>Key Theorists:</strong> Judith Butler, Eve Kosofsky Sedgwick, Michel Foucault</p>
+                `
+            },
+            formalist: {
+                title: 'Formalist Criticism',
+                subtitle: 'Structure, Form & Technique',
+                icon: 'fa-shapes',
+                content: `
+                    <p><strong>What is it?</strong> Formalism focuses on the literary elements within a text itself—structure, language, imagery, and technique—rather than external contexts.</p>
+                    <p><strong>Key Concepts:</strong></p>
+                    <ul>
+                        <li><strong>Close Reading</strong> - Detailed analysis of the text's language and structure</li>
+                        <li><strong>Literary Devices</strong> - Metaphor, symbolism, irony, imagery, tone</li>
+                        <li><strong>Organic Unity</strong> - How all elements work together as a whole</li>
+                        <li><strong>Defamiliarization</strong> - Making the familiar strange through artistic technique</li>
+                    </ul>
+                    <p><strong>Key Theorists:</strong> Viktor Shklovsky, Cleanth Brooks, New Critics</p>
+                `
+            },
+            psycho: {
+                title: 'Psychoanalytic Criticism',
+                subtitle: 'The Unconscious Mind',
+                icon: 'fa-brain',
+                content: `
+                    <p><strong>What is it?</strong> Psychoanalytic criticism applies psychological theories, especially those of Freud and Lacan, to understand characters, authors, and readers.</p>
+                    <p><strong>Key Concepts:</strong></p>
+                    <ul>
+                        <li><strong>The Unconscious</strong> - Hidden desires and repressed memories</li>
+                        <li><strong>Id, Ego, Superego</strong> - The three parts of the psyche</li>
+                        <li><strong>Oedipus Complex</strong> - Child's feelings toward parents</li>
+                        <li><strong>Defense Mechanisms</strong> - Repression, projection, sublimation</li>
+                        <li><strong>Dream Analysis</strong> - Symbols and latent content in narratives</li>
+                    </ul>
+                    <p><strong>Key Theorists:</strong> Sigmund Freud, Jacques Lacan, Carl Jung</p>
+                `
+            }
+        };
+
+        // Modal elements
+        const modal = document.getElementById('lensModal');
+        const modalClose = document.getElementById('modalClose');
+        const modalIcon = document.getElementById('modalIcon');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalSubtitle = document.getElementById('modalSubtitle');
+        const modalBody = document.getElementById('modalBody');
+
+        // Open modal on lens click
+        document.querySelectorAll('.lens-hex').forEach(hex => {
+            hex.addEventListener('click', () => {
+                const lens = hex.dataset.lens;
+                const data = lensData[lens];
+                
+                if (data) {
+                    modalIcon.innerHTML = `<i class="fas ${data.icon}"></i>`;
+                    modalTitle.textContent = data.title;
+                    modalSubtitle.textContent = data.subtitle;
+                    modalBody.innerHTML = data.content;
+                    modal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            });
+        });
+
+        // Close modal
+        modalClose.addEventListener('click', closeModal);
+        modal.querySelector('.lens-modal-overlay').addEventListener('click', closeModal);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape') closeModal();
+        });
+
+        function closeModal() {
+            modal.classList.remove('active');
+            document.body.style.overflow = '';
+        }
+    </script>
 </body>
 </html>
